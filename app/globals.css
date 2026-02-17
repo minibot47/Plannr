@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Seamless loop: distance to the 2nd copy's start = count * (width + gap) */
+    transform: translateX(calc((-175px - 16px) * 6));
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+  display: flex;
+  width: fit-content;
+  will-change: transform;
+}
+
+@keyframes plannr-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * var(--marquee-distance)), 0, 0);
+  }
+}
+
+.plannr-marqueeTrack {
+  --marquee-distance: calc(
+    (var(--marquee-item-width) + var(--marquee-gap)) * var(--marquee-count)
+  );
+  gap: var(--marquee-gap);
+  animation: plannr-marquee var(--marquee-duration) linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  width: max-content;
+}
+
+.plannr-marquee:hover .plannr-marqueeTrack {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide,
+  .plannr-marqueeTrack {
+    animation: none !important;
+    transform: none !important;
+  }
+}
