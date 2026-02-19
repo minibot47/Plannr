@@ -9,10 +9,10 @@ export default function Nav() {
                     <img src="/images/logo.png" alt="LOGO" className="w-[23px] h-[20px]"/>
                     <h3 className="text-2xl font-thin italic">Plannr</h3>
                 </Link>
-                <Link href="/">
+                <Link href="/About">
                     <h3 className="text-sm font-thin">About Us</h3>
                 </Link>
-                <Link href="/">
+                <Link href="/Price">
                     <h3 className="text-sm font-thin">Pricing</h3>
                 </Link>
                 <Link href="/">

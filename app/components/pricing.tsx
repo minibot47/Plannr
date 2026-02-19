@@ -145,7 +145,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-6 pb-28 pt-16">
+    <div className="w-full max-w-[1200px] mx-auto px-6 pb-28 pt-5">
       {/* Align bottoms like the reference */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end">
         {plans.map((plan) => (

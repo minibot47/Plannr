@@ -124,6 +124,23 @@ export default function Home() {
         {/* FREqnetly asked questions */}
         <Questions/>
 
+        {/* CARD */}
+        <div className="w-[80%] h-[520px] mt-20 mb-10 rounded-[16px] flex bg-[#14151A] border-[1px] border-[#FFFFFF14]">
+            <div className="w-1/2 h-full rounded-l-[16px]">
+                <img src="/images/dashboard2.png" alt="IMage" className="w-full h-full rounded-l-[16px]"/>
+            </div>
+            <div className="flex flex-col items-start justify-center w-1/2 h-full rounded-r-[16px] gap-3 px-10">
+                <h2 className="w-[375px] text-4xl">Ready to transform your <span className="text-[#FF4C00]">Project Management?</span></h2>
+                <h3 className="w-[473px] font-light text-lg">Join the growing community of digital agencies revolutionizing their workflows with our powerful, AI-driven tool.</h3>
+                <h3 className="w-[473px] font-thin text-sm">Experience the benefits firsthand with our free Starter plan. Upgrade anytime to access advanced features and premium support tailored to your team’s needs.</h3>
+                {/* Start trial Button */}
+                <button className="px-4 py-2 bg-[#FF4C00] flex mt-5 gap-2 items-center rounded-xl shadow-sm shadow-[#14151A0D] mb-16">
+                Start Your Free Trial
+                <img src="/images/arrow.png" alt="Arrow" className="w-[14px] h-[13px]"/>
+                </button>
+            </div>
+        </div>
+
         {/* FOOTER */}
         <Footer/>
 
