@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ChangeEvent } from "react";
 
 export default function Nav() {
     const router = useRouter();
 
-    const handleDropdownNavigation = (e) => {
+    const handleDropdownNavigation = (e: ChangeEvent<HTMLSelectElement>) => {
         const value = e.target.value;
         if (value) {
             router.push(value);
@@ -42,10 +43,10 @@ export default function Nav() {
                     defaultValue=""
                 >
                     <option value="" disabled>Pages</option>
-                    <option value="/Features" className="bg-black text-white">Privacy Policy</option>
-                    <option value="/Blog" className="bg-black text-white">Terms & Conditions</option>
-                    <option value="/Contact" className="bg-black text-white">Licenses</option>
-                    <option value="/FAQ" className="bg-black text-white">Changelog</option>
+                    <option value="/Features" className="bg-black text-white">Features</option>
+                    <option value="/Blog" className="bg-black text-white">Blog</option>
+                    <option value="/Contact" className="bg-black text-white">Contact</option>
+                    <option value="/FAQ" className="bg-black text-white">FAQ</option>
                 </select>
             </div>
             
