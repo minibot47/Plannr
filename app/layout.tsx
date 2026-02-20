@@ -5,6 +5,9 @@ import Banner from "./components/banner";
 export const metadata: Metadata = {
   title: "Plannr-A Startup landing page",
   description: "Next.js + TypeScript + Tailwind CSS Starter",
+  icons: {
+    icon: '/images/logo.png', 
+  },
 };
 
 export default function RootLayout({
