@@ -28,7 +28,7 @@ function FooterColumn({
 export default function Footer() {
   return (
     <footer className="w-full mt-24 ">
-      <div className="w-full bg-[#141416] border-t-[0.1px] border-gray-[#414141] relative overflow-hidden">
+      <div className="w-full bg-[#141416] border-t-[0.1px] border-[#414141] relative overflow-hidden">
         {/* subtle warm glow like the reference */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(closest-side_at_50%_120%,rgba(255,76,0,0.16),transparent_70%)]" />
 
