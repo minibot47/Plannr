@@ -15,8 +15,8 @@ export default function Nav() {
                 <Link href="/Price">
                     <h3 className="text-sm font-thin">Pricing</h3>
                 </Link>
-                <Link href="/">
-                    <h3 className="text-sm font-thin">Blogs</h3>
+                <Link href="/Signup">
+                    <h3 className="text-sm font-thin">Signup</h3>
                 </Link>
                 <Link href="/">
                     <select className="bg-transparent border-none text-sm font-thin">
