@@ -35,7 +35,7 @@ export default function Nav() {
                 {/* Fixed Dropdown */}
                 <select 
                     onChange={handleDropdownNavigation}
-                    className="bg-transparent border-none text-sm font-thin outline-none cursor-pointer appearance-none pr-1 bg-no-repeat bg-right hover:text-gray-300 transition-colors"
+                    className="bg-transparent border-none text-sm font-thin w-[60px] outline-none cursor-pointer appearance-none pr-0  bg-no-repeat bg-right hover:text-gray-300 transition-colors"
                     style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                         backgroundSize: '16px',
@@ -43,10 +43,10 @@ export default function Nav() {
                     defaultValue=""
                 >
                     <option value="" disabled>Pages</option>
-                    <option value="/Features" className="bg-black text-white">Features</option>
-                    <option value="/Blog" className="bg-black text-white">Blog</option>
-                    <option value="/Contact" className="bg-black text-white">Contact</option>
-                    <option value="/FAQ" className="bg-black text-white">FAQ</option>
+                    <option value="/Privacy" className="bg-black text-white">Privacy & Policy</option>
+                    <option value="/Terms" className="bg-black text-white">Terms & Conditions</option>
+                    <option value="/License" className="bg-black text-white">Licences</option>
+                    <option value="/Change" className="bg-black text-white">Changelog</option>
                 </select>
             </div>
             
