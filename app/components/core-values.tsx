@@ -61,12 +61,11 @@ interface CoreValuesProps {
 export default function CoreValues({ values = DEFAULT_VALUES, className = "" }: CoreValuesProps) {
   return (
     <section
-      className={`w-full   bg-[#141416] px-16 py-16 ${className}`}
+      className={`w-full bg-[#141416] px-16 max-lg:px-8 max-md:px-4 py-16 max-md:py-12 ${className}`}
     >
-      <div className="mx-auto flex max-w-[1440px]  flex-col gap-12 lg:flex-row lg:gap-16">
-        {/* Left column */}
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-12 lg:flex-row lg:gap-16">
         <div className="flex w-full flex-col gap-4 lg:w-[38%]">
-          <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+          <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl max-md:text-3xl">
             The <span className="text-[#FF4C00]">Core Values</span>
             <br />
             behind

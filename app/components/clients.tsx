@@ -46,18 +46,17 @@ export default function Clients() {
   } as CSSProperties;
 
   return (
-    <section className="w-full flex flex-col items-center text-white pb-24">
-      {/* TOP banner */}
-      <div className="rounded-xl bg-[#FDB99C33] w-fit flex gap-2 px-3 py-0.5 items-center justify-center mt-[60px] mb-[60px]">
+    <section className="w-full flex flex-col items-center text-white pb-24 max-md:pb-16 px-4 max-md:px-4">
+      <div className="rounded-xl bg-[#FDB99C33] w-fit flex gap-2 px-3 py-0.5 items-center justify-center mt-[60px] max-md:mt-10 mb-[60px] max-md:mb-10">
         <h3 className="text-white text-sm font-thin">Real Feedback from Real Users</h3>
       </div>
 
       {/* Top Info */}
-      <div className="flex flex-col gap-5 items-center mb-20">
-        <h2 className="text-5xl text-center text-white max-w-[770px]">
+      <div className="flex flex-col gap-5 items-center mb-20 max-md:mb-10 px-2">
+        <h2 className="text-5xl max-lg:text-4xl max-md:text-2xl text-center text-white max-w-[770px]">
           What<span className="text-[#FF4C00]"> Our Clients</span> Are Saying
         </h2>
-        <h3 className="font-thin text-lg text-[#E7E7E7] max-w-[548px] text-center">
+        <h3 className="font-thin text-lg max-md:text-base text-[#E7E7E7] max-w-[548px] text-center">
           Our clients have experienced remarkable improvements in their project management and overall
           productivity.
         </h3>

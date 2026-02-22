@@ -37,7 +37,7 @@ function PricingCard({ plan }: { plan: Plan }) {
     <div
       className={[
         // Different heights like the reference: featured card is taller.
-        "relative rounded-[22px] border border-[#FFFFFF14] bg-[#14151A] px-10 pt-10 pb-4 flex flex-col",
+        "relative rounded-[22px] border border-[#FFFFFF14] bg-[#14151A] px-10 max-md:px-6 pt-10 max-md:pt-6 pb-4 flex flex-col",
         plan.heightClass ?? (featured ? "min-h-[660px]" : "min-h-[600px]"),
         featured
           ? "shadow-[0_0_0_1px_rgba(255,76,0,0.45),_0_30px_90px_rgba(255,76,0,0.08)]"
@@ -145,9 +145,8 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-6 pb-28 pt-5">
-      {/* Align bottoms like the reference */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end">
+    <div className="w-full max-w-[1200px] mx-auto px-6 max-md:px-4 pb-28 max-md:pb-16 pt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-md:gap-6 items-end">
         {plans.map((plan) => (
           <PricingCard key={plan.name} plan={plan} />
         ))}

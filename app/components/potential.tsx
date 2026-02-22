@@ -45,31 +45,28 @@ export default function Potential() {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center mb-20">
-      {/* TOP banner */}
-      <div className="rounded-xl bg-[#FDB99C33] w-fit flex gap-2 px-3 py-0.5 items-center justify-center mt-[60px] mb-[60px] m-auto">
+    <section className="w-full flex flex-col items-center mb-20 max-md:mb-12">
+      <div className="rounded-xl bg-[#FDB99C33] w-fit flex gap-2 px-3 py-0.5 items-center justify-center mt-[60px] max-md:mt-10 mb-[60px] max-md:mb-10 m-auto">
         <h3 className="text-white text-sm font-thin">See what's new in Grauberg</h3>
       </div>
 
-      {/* Top Info */}
-      <div className="flex flex-col gap-5 items-center mb-20">
-        <h2 className="text-5xl text-center text-white max-w-[586px]">
+      <div className="flex flex-col gap-5 items-center mb-20 max-md:mb-10 px-4">
+        <h2 className="text-5xl max-lg:text-4xl max-md:text-2xl text-center text-white max-w-[586px]">
           Unleash the full potential of <span className="text-[#FF4C00]"> Your Projects</span>
         </h2>
-        <h3 className="font-thin text-lg text-[#E7E7E7] max-w-[518px] text-center">
+        <h3 className="font-thin text-lg max-md:text-base text-[#E7E7E7] max-w-[518px] text-center">
           Discover the powerful features that make our project management tool indispensable for digital
           agencies.
         </h3>
       </div>
 
-      {/* Grid */}
-      <div className="w-[80%] max-w-[1440px] px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-24">
+      <div className="w-[80%] max-lg:w-[90%] max-md:w-full max-w-[1440px] px-6 max-md:px-4 pb-24 max-md:pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-24 max-lg:gap-x-12 max-lg:gap-y-12 max-md:gap-x-8 max-md:gap-y-10">
           {features.map((f) => (
             <div key={f.title} className="flex flex-col gap-3">
               <div className="text-[#FF4C00] mb-2">{f.icon}</div>
-              <h3 className="text-white text-xl font-medium">{f.title}</h3>
-              <p className="text-[#E7E7E7]/70 text-thin leading-relaxed max-w-[360px]">
+              <h3 className="text-white text-xl max-md:text-lg font-medium">{f.title}</h3>
+              <p className="text-[#E7E7E7]/70 text-thin leading-relaxed max-w-[360px] max-md:max-w-full">
                 {f.description}
               </p>
             </div>

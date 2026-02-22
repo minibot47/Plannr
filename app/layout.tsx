@@ -1,13 +1,18 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Banner from "./components/banner";
 
 export const metadata: Metadata = {
   title: "Plannr-A Startup landing page",
   description: "Next.js + TypeScript + Tailwind CSS Starter",
   icons: {
-    icon: '/images/logo.png', 
+    icon: '/images/logo.png',
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

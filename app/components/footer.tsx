@@ -27,13 +27,12 @@ function FooterColumn({
 
 export default function Footer() {
   return (
-    <footer className="w-full mt-24 ">
-      <div className="w-full bg-[#141416] border-t-[0.1px] border-[#414141] relative overflow-hidden">
-        {/* subtle warm glow like the reference */}
+    <footer className="w-full mt-24 max-md:mt-12">
+      <div className="w-full bg-[#141416] border-t border-[#414141] relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(closest-side_at_50%_120%,rgba(255,76,0,0.16),transparent_70%)]" />
 
-        <div className="relative w-[80%] max-w-[1400px] mx-auto pt-20 pb-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="relative w-[80%] max-lg:w-[90%] max-md:w-full max-md:px-6 max-w-[1400px] mx-auto pt-20 max-md:pt-12 pb-10 max-md:pb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 max-md:gap-8 lg:gap-16">
             {/* Brand */}
             <div className="flex flex-col gap-5 lg:col-span-1">
                 <Link href="/" className="flex  items-center gap-2 mr-6">
@@ -90,10 +89,10 @@ export default function Footer() {
 
           <div className="mt-16 border-t border-white/10" />
 
-          <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="text-white/60 text-xs">© 2024 - Powered by Webflow</div>
+          <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 max-md:gap-3">
+            <div className="text-white/60 text-xs max-md:text-[10px]">© 2024 - Powered by Webflow</div>
 
-            <div className="flex items-center gap-6 text-xs text-white/70">
+            <div className="flex flex-wrap items-center gap-4 max-md:gap-3 text-xs max-md:text-[10px] text-white/70">
               <a href="#" className="hover:text-white transition-colors underline underline-offset-4">
                 Privacy Policy
               </a>

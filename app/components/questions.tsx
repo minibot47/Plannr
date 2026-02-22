@@ -75,21 +75,19 @@ export default function Questions() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section className="w-[80%] max-w-[1400px] mx-auto py-24">
-      <div className="flex flex-col lg:flex-row gap-14">
-        {/* Left title */}
+    <section className="w-[80%] max-lg:w-[90%] max-md:w-full max-md:px-4 max-w-[1400px] mx-auto py-24 max-md:py-12">
+      <div className="flex flex-col lg:flex-row gap-14 max-md:gap-10">
         <div className="flex flex-col gap-5 lg:w-[40%]">
-          <h2 className="text-5xl text-start text-white max-w-[522px]">
+          <h2 className="text-5xl max-lg:text-4xl max-md:text-2xl text-start text-white max-w-[522px]">
             Frequently
             <br />
             <span className="text-[#FF4C00]"> Asked Question</span>
           </h2>
-          <p className="font-thin text-lg text-[#E7E7E7] max-w-[522px] text-start">
+          <p className="font-thin text-lg max-md:text-base text-[#E7E7E7] max-w-[522px] text-start">
             Find answers to the most common questions about our project management tool.
           </p>
         </div>
 
-        {/* Right accordion */}
         <div
           className="lg:w-[60%] relative overflow-hidden"
           style={{
@@ -107,10 +105,10 @@ export default function Questions() {
                   key={item.q}
                   type="button"
                   onClick={() => setOpenIndex(open ? -1 : idx)}
-                  className="w-full text-left py-6 flex items-start justify-between gap-6"
+                  className="w-full text-left py-6 max-md:py-4 flex items-start justify-between gap-4 max-md:gap-3"
                 >
-                  <div className="flex-1">
-                    <div className="text-white text-[15px] font-medium">{item.q}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white text-[15px] max-md:text-sm font-medium">{item.q}</div>
 
                     {/* Smooth expand/collapse */}
                     <div
