@@ -58,74 +58,89 @@ function TeamCard({ member }: { member: TeamMember }) {
   const iconSize = "w-4 h-4";
 
   return (
-    <article className="group rounded-xl bg-[#14151A] border border-[#FFFFFF14] overflow-hidden flex flex-col hover:border-[#FFFFFF28] transition-colors">
-      {/* Portrait */}
-      <div className="aspect-square w-full overflow-hidden rounded-t-xl">
-        <img
-          src={member.image}
-          alt={member.name}
-          className="h-full w-full object-cover"
-        />
-      </div>
+    <article className="group rounded-xl bg-[#14151A] border border-[#FFFFFF14] overflow-hidden flex flex-col sm:flex-col hover:border-[#FFFFFF28] transition-colors">
+      {/* Mobile: horizontal layout — portrait left, content right */}
+      {/* sm+: vertical layout — portrait on top, content below */}
+      <div className="flex flex-row sm:flex-col flex-1">
 
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-5">
-        <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-        <p className="text-sm text-[#E7E7E7]/80 mt-0.5">{member.role}</p>
-        <p className="text-sm text-[#E7E7E7]/70 font-thin mt-3 leading-relaxed line-clamp-3">
-          {member.description}
-        </p>
+        {/* Portrait */}
+        <div className="w-24 h-24 shrink-0 sm:w-full sm:h-auto sm:aspect-square overflow-hidden rounded-tl-xl rounded-bl-xl sm:rounded-tl-xl sm:rounded-tr-xl sm:rounded-bl-none">
+          <img
+            src={member.image}
+            alt={member.name}
+            className="h-full w-full object-cover"
+          />
+        </div>
 
-        {/* Icons row */}
-        <div className="flex items-center justify-between mt-5">
-          <div className="flex items-center gap-2">
-            {member.linkedin && (
+        {/* Content */}
+        <div className="flex flex-col flex-1 p-3 sm:p-5 min-w-0">
+          <h3 className="text-base sm:text-lg font-semibold text-white leading-tight truncate">
+            {member.name}
+          </h3>
+          <p className="text-xs sm:text-sm text-[#E7E7E7]/80 mt-0.5 truncate">
+            {member.role}
+          </p>
+          <p className="hidden sm:block text-sm text-[#E7E7E7]/70 font-thin mt-3 leading-relaxed line-clamp-3">
+            {member.description}
+          </p>
+
+          {/* Icons row */}
+          <div className="flex items-center justify-between mt-3 sm:mt-5">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FFFFFF24] hover:text-white transition-colors`}
+                  aria-label={`${member.name} on LinkedIn`}
+                >
+                  <LinkedInIcon className={iconSize} />
+                </a>
+              )}
+              {member.twitter && (
+                <a
+                  href={member.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FFFFFF24] hover:text-white transition-colors`}
+                  aria-label={`${member.name} on X`}
+                >
+                  <TwitterIcon className={iconSize} />
+                </a>
+              )}
+              {member.website && (
+                <a
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FFFFFF24] hover:text-white transition-colors`}
+                  aria-label={`${member.name} website`}
+                >
+                  <GlobeIcon className={iconSize} />
+                </a>
+              )}
+            </div>
+            {member.profileUrl && (
               <a
-                href={member.linkedin}
+                href={member.profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FFFFFF24] hover:text-white transition-colors`}
-                aria-label={`${member.name} on LinkedIn`}
+                className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FF4C00] hover:text-white transition-colors`}
+                aria-label={`View ${member.name} profile`}
               >
-                <LinkedInIcon className={iconSize} />
-              </a>
-            )}
-            {member.twitter && (
-              <a
-                href={member.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FFFFFF24] hover:text-white transition-colors`}
-                aria-label={`${member.name} on X`}
-              >
-                <TwitterIcon className={iconSize} />
-              </a>
-            )}
-            {member.website && (
-              <a
-                href={member.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FFFFFF24] hover:text-white transition-colors`}
-                aria-label={`${member.name} website`}
-              >
-                <GlobeIcon className={iconSize} />
+                <ExternalLinkIcon className={iconSize} />
               </a>
             )}
           </div>
-          {member.profileUrl && (
-            <a
-              href={member.profileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${linkSize} flex items-center justify-center rounded-lg bg-[#FFFFFF14] text-[#E7E7E7] hover:bg-[#FF4C00] hover:text-white transition-colors`}
-              aria-label={`View ${member.name} profile`}
-            >
-              <ExternalLinkIcon className={iconSize} />
-            </a>
-          )}
         </div>
+
       </div>
+
+      {/* Mobile-only description below the horizontal row */}
+      <p className="sm:hidden text-xs text-[#E7E7E7]/70 font-thin px-3 pb-3 leading-relaxed line-clamp-2">
+        {member.description}
+      </p>
     </article>
   );
 }

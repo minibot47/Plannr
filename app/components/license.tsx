@@ -4,7 +4,7 @@ import Nav from "./nav";
 // Licenses Section Component
 function LicensesSection() {
   return (
-    <div className="w-full text-white mb-12 px-4 max-md:px-4">
+    <div className="w-full text-white mb-12 px-4 max-md:px-0">
       <div className="mb-8">
         <h1 className="text-3xl max-md:text-2xl font-semibold mb-2">Licenses</h1>
         <p className="text-xs text-gray-400 mb-3">Last edit: Jul 5, 2023</p>
@@ -36,13 +36,13 @@ function LicensesSection() {
               unsplash.com
             </div>
           </div>
-          <div className="p-6 flex gap-4">
-            <div className="flex-1">
-              <div className="text-2xl font-bold text-white mb-1">Unsplash</div>
+          <div className="p-6 max-md:p-4 flex gap-4">
+            <div className="flex-1 min-w-0">
+              <div className="text-2xl max-md:text-xl font-bold text-white mb-1">Unsplash</div>
               <p className="text-xs text-gray-400 mb-4">The internet's source of freely-usable images.</p>
               <div className="grid grid-cols-3 gap-2">
                 {["bg-gray-600", "bg-gray-700", "bg-gray-500"].map((bg, i) => (
-                  <div key={i} className={`${bg} rounded-lg h-20`} />
+                  <div key={i} className={`${bg} rounded-lg h-20 max-md:h-14`} />
                 ))}
               </div>
             </div>
@@ -71,7 +71,7 @@ function LicensesSection() {
               fonts.google.com
             </div>
           </div>
-          <div className="p-6 bg-[#0d0d0d]">
+          <div className="p-6 max-md:p-4 bg-[#0d0d0d]">
             <div className="flex gap-4 mb-4 overflow-x-auto pb-2">
               {["Inter", "Roboto", "Open Sans", "Montserrat", "Lato", "Poppins"].map((font) => (
                 <span key={font} className="text-xs text-gray-400 whitespace-nowrap border-b border-orange-500 pb-1">
@@ -79,7 +79,7 @@ function LicensesSection() {
                 </span>
               ))}
             </div>
-            <p className="text-base text-white mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+            <p className="text-base max-md:text-sm text-white mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
               Everyone has the right to freedom of thought, conscience and religion; this ri...
             </p>
             <p className="text-xs text-gray-500">
@@ -113,10 +113,11 @@ function LicensesSection() {
               phosphoricons.com
             </div>
           </div>
-          <div className="p-6 bg-white">
-            <div className="grid grid-cols-10 gap-4">
+          <div className="p-6 max-md:p-4 bg-white">
+            {/* Fixed: grid-cols-10 overflowed on mobile — responsive grid instead */}
+            <div className="grid grid-cols-10 max-md:grid-cols-6 gap-4 max-md:gap-3">
               {Array.from({ length: 30 }).map((_, i) => (
-                <div key={i} className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center">
+                <div key={i} className="w-8 h-8 max-md:w-7 max-md:h-7 bg-gray-200 rounded flex items-center justify-center">
                   <div className="w-4 h-4 bg-gray-400 rounded-sm" />
                 </div>
               ))}
@@ -146,13 +147,15 @@ function LicensesSection() {
               worldvectorlogo.com
             </div>
           </div>
-          <div className="p-8 text-center">
-            <div className="text-3xl font-bold text-gray-900 mb-2">The internet's source<br />of free logos.</div>
+          <div className="p-8 max-md:p-5 text-center">
+            <div className="text-3xl max-md:text-xl font-bold text-gray-900 mb-2">
+              The internet's source<br />of free logos.
+            </div>
             <p className="text-gray-500 text-sm mb-4">Showcase and download</p>
             <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm mb-6 hover:bg-blue-700 transition-colors">
               Explore logos
             </button>
-            <div className="flex justify-center gap-6 flex-wrap">
+            <div className="flex justify-center gap-6 max-md:gap-4 flex-wrap">
               {["Shopify", "Tailwind", "GitHub", "Stripe", "Ararat"].map((logo) => (
                 <div key={logo} className="flex items-center gap-1">
                   <div className="w-5 h-5 bg-gray-300 rounded-sm" />
@@ -171,27 +174,34 @@ export default function License() {
   return (
     <div className="w-full max-w-[1440px] m-auto">
       <Nav />
-      <div className="p-16 flex flex-col items-center">
+      {/* Fixed: p-16 had no mobile override — would cause horizontal overflow */}
+      <div className="p-16 max-lg:p-8 max-md:p-4 flex flex-col items-center">
         {/* LICENSES SECTION */}
         <LicensesSection />
 
         {/* CARD */}
-        <div className="w-full h-[520px] mt-20 mb-10 rounded-[16px] flex bg-[#14151A] border-[1px] border-[#FFFFFF14]">
-          <div className="w-1/2 h-full rounded-l-[16px]">
-            <img src="/images/dashboard2.png" alt="IMage" className="w-full h-full rounded-l-[16px]" />
+        {/* Fixed: h-[520px] hard height + w-[375px]/w-[473px] inner widths — all overflow on mobile */}
+        <div className="w-full mt-20 max-md:mt-12 mb-10 rounded-[16px] max-md:rounded-xl flex max-md:flex-col bg-[#14151A] border border-[#FFFFFF14]">
+          <div className="w-1/2 max-md:w-full max-md:h-52 shrink-0 overflow-hidden rounded-l-[16px] max-md:rounded-t-xl max-md:rounded-bl-none">
+            <img
+              src="/images/dashboard2.png"
+              alt="IMage"
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div className="flex flex-col items-start justify-center w-1/2 h-full rounded-r-[16px] gap-3 px-10">
-            <h2 className="w-[375px] text-4xl">
+          <div className="flex flex-col items-start justify-center w-1/2 max-md:w-full rounded-r-[16px] max-md:rounded-b-xl max-md:rounded-tr-none gap-3 px-10 max-md:px-6 py-10 max-md:py-8">
+            <h2 className="w-[375px] max-w-full text-4xl max-lg:text-3xl max-md:text-2xl leading-tight">
               Ready to transform your{" "}
               <span className="text-[#FF4C00]">Project Management?</span>
             </h2>
-            <h3 className="w-[473px] font-light text-lg">
+            <h3 className="w-[473px] max-w-full font-light text-lg max-md:text-base">
               Join the growing community of digital agencies revolutionizing their workflows with our powerful, AI-driven tool.
             </h3>
-            <h3 className="w-[473px] font-thin text-sm">
+            <h3 className="w-[473px] max-w-full font-thin text-sm">
               Experience the benefits firsthand with our free Starter plan. Upgrade anytime to access advanced features and premium support tailored to your team's needs.
             </h3>
-            <button className="px-4 py-2 bg-[#FF4C00] flex mt-5 gap-2 items-center rounded-xl shadow-sm shadow-[#14151A0D] mb-16">
+            {/* Fixed: mb-16 on button was pushing the card height unnecessarily on mobile */}
+            <button className="px-4 py-2 bg-[#FF4C00] flex mt-5 gap-2 items-center rounded-xl shadow-sm shadow-[#14151A0D]">
               Start Your Free Trial
               <img src="/images/arrow.png" alt="Arrow" className="w-[14px] h-[13px]" />
             </button>

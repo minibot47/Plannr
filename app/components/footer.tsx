@@ -48,41 +48,36 @@ export default function Footer() {
               title="Pages"
               links={[
                 { label: "Home", href: "#" },
-                { label: "Pricing Page", href: "#" },
-                { label: "About Page", href: "#" },
-                { label: "Signup Page", href: "#" },
-                { label: "Blog", href: "#" },
-                { label: "Blog Post Page", href: "#" },
+                { label: "Pricing Page", href: "/Price" },
+                { label: "About Page", href: "/About" },
+                { label: "Signup Page", href: "/Signup" },
               ]}
             />
 
             <FooterColumn
               title="Other"
               links={[
-                { label: "404 Page", href: "#" },
-                { label: "Privacy Policy", href: "#" },
-                { label: "Terms", href: "#" },
+                { label: "404 Page", href: "/not-found" },
+                { label: "Privacy Policy", href: "/Privacy" },
+                { label: "Terms", href: "/Terms" },
               ]}
             />
 
             <FooterColumn
               title="Utility"
               links={[
-                { label: "Style Guide", href: "#" },
-                { label: "Licencing", href: "#" },
-                { label: "Change Log", href: "#" },
-                { label: "Instructions", href: "#" },
+                { label: "Licencing", href: "/License" },
+                { label: "Change Log", href: "/Changelog" },
               ]}
             />
 
             <FooterColumn
               title="Media"
               links={[
-                { label: "Facebook", href: "#" },
-                { label: "Linkedin", href: "#" },
-                { label: "Github", href: "#" },
-                { label: "Youtube", href: "#" },
-                { label: "Slack", href: "#" },
+                { label: "Twitter", href: "https://x.com/toludairo534" },
+                { label: "Contra", href: "https://contra.com/tolu_dairo_z3pu2um3?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=tolu_dairo_z3pu2um3" },
+                { label: "Linkedin", href: "https://www.linkedin.com/in/toludairo/" },
+                { label: "Github", href: "https://github.com/minibot47" },
               ]}
             />
           </div>
@@ -93,14 +88,11 @@ export default function Footer() {
             <div className="text-white/60 text-xs max-md:text-[10px]">© 2024 - Powered by Webflow</div>
 
             <div className="flex flex-wrap items-center gap-4 max-md:gap-3 text-xs max-md:text-[10px] text-white/70">
-              <a href="#" className="hover:text-white transition-colors underline underline-offset-4">
+              <a href="/Privacy" className="hover:text-white transition-colors underline underline-offset-4">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-white transition-colors underline underline-offset-4">
+              <a href="/Terms" className="hover:text-white transition-colors underline underline-offset-4">
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-white transition-colors underline underline-offset-4">
-                Cookies Settings
               </a>
             </div>
           </div>
